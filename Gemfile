@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'aws-sdk'
-
 gem 'figaro', '~> 1.0.0.rc1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -29,12 +26,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk'
 gem 'better_errors'
 gem 'quiet_assets'
 gem 'binding_of_caller'
 gem 'devise'
 
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
