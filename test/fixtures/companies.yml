@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  siren: 1
+  description: MyText
+  hq_address_id: 1
+  billing_address_id: 1
+
+two:
+  name: MyString
+  siren: 1
+  description: MyText
+  hq_address_id: 1
+  billing_address_id: 1
