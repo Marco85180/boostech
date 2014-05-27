@@ -34,6 +34,9 @@ gem 'quiet_assets'
 gem 'binding_of_caller'
 gem 'devise'
 
+gem 'sass-rails', '~> 4.0.3'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
