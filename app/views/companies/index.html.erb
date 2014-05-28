@@ -1,19 +1,35 @@
 <h1>liste des sociétés</h1>
 
-<!-- <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3><%#= @company.name %><h3>
-</div>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3><%#= @company.description %><h3>
-</div>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3><%#= @company.hq_address_id %><h3>
-</div>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3><%#= @company.billing_address_id %><h3>
-</div>
- -->
+    <div id="annonces-box">
+      <% @companies.each do |company| %>
+
+      <div class="col-md-6">
+        <div class="box">
+          <div class="row">
+
+            <div class="col-md-12">
+              <%= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
+            </div>
+          </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="below-box">
+                <div class="row">
+
+                  <div class="col-md-8">
+                    <%= link_to company_path(company) do %>
+                    <h3><%= company.name %></h3>
+                    <% end %>
+                    <address><%#= company.address %></address>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end div box-->
+      </div><!-- end div col-md-6-->
+      <% end %>
+    </div><!-- end div annonces-box -->
