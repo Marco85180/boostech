@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'companies/index'
+
+  root "companies#index"
 
   resources :companies
 
