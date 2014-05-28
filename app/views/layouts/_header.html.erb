@@ -9,14 +9,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Boostech</a>
+      <%= link_to "Boostech", companies_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Liste des sociétés</a></li>
-        <li><a href="#">Lancer votre campagne</a></li>
+        <li><%= link_to "Liste des sociétés", companies_path %></li>
+        <li><%= link_to "Lancer votre campagne", companies_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
