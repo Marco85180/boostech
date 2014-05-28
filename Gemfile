@@ -5,12 +5,7 @@ gem 'figaro', '~> 1.0.0.rc1'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -33,8 +28,15 @@ gem 'quiet_assets'
 gem 'binding_of_caller'
 gem 'devise'
 
-gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass', '~> 3.1.1'
+group :assets do
+  gem 'bootstrap-sass', '~> 3.1.1'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 4.0.3'
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.3.0'
+  # Use CoffeeScript for .js.coffee assets and views
+  gem 'coffee-rails', '~> 4.0.0'
+end
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
