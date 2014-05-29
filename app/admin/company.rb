@@ -12,6 +12,34 @@ ActiveAdmin.register Company do
     actions
   end
 
+  form do |f|
+    f.inputs "Identité" do
+      f.input :name
+      f.input :siren
+      f.input :description
+    end
+    f.inputs "Logo" do
+      f.input :banner, :as => :file, :hint => f.template.image_tag(f.object.banner.url(:thumb))
+    end
+     f.inputs "Picture" do
+      f.input :picture, :as => :file, :hint => f.template.image_tag(f.object.picture.url(:thumb))
+    end
+    f.actions
+  end
+
+  show do |ad|
+      attributes_table do
+        row :name
+        row :siren
+        row :description
+        row :picture do
+          image_tag(ad.picture.url(:thumb))
+        end
+        row :banner do
+          image_tag(ad.banner.url(:thumb))
+        end
+      end
+    end
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -27,6 +55,6 @@ ActiveAdmin.register Company do
   # end
 
   permit_params do
-    [:name, :siren, :description ]
+    [:name, :siren, :description, :banner, :picture ]
   end
 end
