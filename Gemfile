@@ -28,6 +28,8 @@ gem 'quiet_assets'
 gem 'binding_of_caller'
 gem 'devise'
 gem 'country_select'
+gem "geocoder"
+gem "gmaps4rails"
 
 group :assets do
   gem 'bootstrap-sass', '~> 3.1.1'
