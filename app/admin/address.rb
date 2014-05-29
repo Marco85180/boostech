@@ -15,6 +15,6 @@ ActiveAdmin.register Address do
   # end
 
   permit_params do
-    [:city, :region, :street, :country, :zipcode, :latitude, :longitude ]
+    [:city, :region, :street, :country, :zipcode, :latitude, :longitude, :company_id ]
   end
 end
