@@ -27,6 +27,7 @@ gem 'better_errors'
 gem 'quiet_assets'
 gem 'binding_of_caller'
 gem 'devise'
+gem 'country_select'
 
 group :assets do
   gem 'bootstrap-sass', '~> 3.1.1'
