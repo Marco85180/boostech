@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528095509) do
+ActiveRecord::Schema.define(version: 20140529184005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,25 +66,25 @@ ActiveRecord::Schema.define(version: 20140528095509) do
     t.string   "name"
     t.integer  "siren"
     t.text     "description"
-    t.integer  "billing_address_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.string   "logo"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
-  create_table "pictures", force: true do |t|
+  create_table "company_people", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "picture"
     t.integer  "company_id"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pictures", ["company_id"], name: "index_pictures_on_company_id", using: :btree
+  add_index "company_people", ["company_id"], name: "index_company_people_on_company_id", using: :btree
 
 end

@@ -4,7 +4,7 @@
     <div class="row">
       <% @companies.each do |company| %>
       <div class="col-md-6">
-        <%= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
+        <%#= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
           <div class="col-md-offset-1 col-md-10">
             <div class="row"> <!-- Row pour le header de la box -->
               <div class="col-md-offset-1 col-md-10">
