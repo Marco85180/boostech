@@ -21,9 +21,9 @@ ActiveAdmin.register Company do
     f.inputs "Logo" do
       f.input :banner, :as => :file, :hint => f.template.image_tag(f.object.banner.url(:thumb))
     end
-     f.inputs "Picture" do
-      f.input :picture, :as => :file, :hint => f.template.image_tag(f.object.picture.url(:thumb))
-    end
+    #  f.inputs "Picture" do
+    #   f.input :picture, :as => :file, :hint => f.template.image_tag(f.object.picture.url(:thumb))
+    # end
     f.actions
   end
 
@@ -32,9 +32,9 @@ ActiveAdmin.register Company do
         row :name
         row :siren
         row :description
-        row :picture do
-          image_tag(ad.picture.url(:thumb))
-        end
+        # row :picture do
+        #   image_tag(ad.picture.url(:thumb))
+        # end
         row :banner do
           image_tag(ad.banner.url(:thumb))
         end
@@ -55,6 +55,6 @@ ActiveAdmin.register Company do
   # end
 
   permit_params do
-    [:name, :siren, :description, :banner, :picture ]
+    [:name, :siren, :description, :banner, ]
   end
 end
