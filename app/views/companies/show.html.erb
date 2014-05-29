@@ -5,6 +5,9 @@
       <h3><%= @company.name %><h3>
       <strong>Description:</strong>
       <p> <%= @company.description %></p>
+      <p> <%= @company.addresses.first.street %></p>
+      <p> <%= @company.addresses.first.zipcode %></p>
+      <p> <%= @company.addresses.first.city %></p>
     </div>
   </div>
 </div>
