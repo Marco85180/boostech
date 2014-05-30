@@ -1,5 +1,6 @@
 class Company < ActiveRecord::Base
   has_many :addresses
+  has_many :founders
 
   has_attached_file :banner,
     styles: { medium: "300x300>", thumb: "100x100>" }
