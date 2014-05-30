@@ -9,7 +9,7 @@
             <div class="row"> <!-- Row pour le header de la box -->
               <div class="col-md-offset-1 col-md-10">
                 <div class="boxcompany"> <!-- Row pour la présentation de la compagnie -->
-                <%= link_to company_path(company) do %>
+                <%= link_to company_path(company), :'data-no-turbolink' => true do %>
                 <h3><%= company.name %></h3>
                 <p> <%= company.description %></p>
                 <% end %>
