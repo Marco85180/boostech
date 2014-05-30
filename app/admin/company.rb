@@ -9,6 +9,9 @@ ActiveAdmin.register Company do
     column "Addresses" do |company|
       company.addresses.map { |a| [ a.street, a.zipcode, a.city ].join (" ") }.join " - "
     end
+    column "Founders" do |company|
+      company.founders.map { |a| [ a.firstname, a.lastname ].join (" ") }.join " - "
+    end
     actions
   end
 
