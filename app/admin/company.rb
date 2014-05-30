@@ -4,13 +4,15 @@ ActiveAdmin.register Company do
   index do
     column :id
     column :name
-    column :siren
+    column "Founders" do |company|
+      company.founders.map { |a| [ a.firstname, a.lastname ].join (" ") }.join " - "
+    end
     column :description
     column "Addresses" do |company|
       company.addresses.map { |a| [ a.street, a.zipcode, a.city ].join (" ") }.join " - "
     end
-    column "Founders" do |company|
-      company.founders.map { |a| [ a.firstname, a.lastname ].join (" ") }.join " - "
+    column "Campaign" do |company|
+      company.campaign.nil? ? 0 : company.campaign.amount
     end
     actions
   end
