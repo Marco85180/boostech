@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 20140530072106) do
     t.string   "name"
     t.integer  "siren"
     t.text     "description"
+    t.integer  "billing_address_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
     t.string   "logo"
     t.string   "banner_file_name"
     t.string   "banner_content_type"
@@ -78,17 +80,5 @@ ActiveRecord::Schema.define(version: 20140530072106) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
   end
-
-  create_table "company_people", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.string   "picture"
-    t.integer  "company_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "company_people", ["company_id"], name: "index_company_people_on_company_id", using: :btree
 
 end
