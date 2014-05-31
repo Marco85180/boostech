@@ -21,3 +21,14 @@ body {font-size: 98%}
 .buttonsearch {
   background-color: #18bc9c;
 }
+
+.buttonsearch:hover {
+  background: #1dccaa;
+}
+
+.form-control {
+ // background-color: rgba(44, 62, 80, 0);
+  border-color: rgba(24, 188, 156, 0.58) !important;
+}
+
+.form-control::-webkit-input-placeholder { color: #18bc9c; }
