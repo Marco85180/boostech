@@ -1,6 +1,6 @@
-@media only screen and (max-width: 400px) {
-body {font-size: 98%}
-}
+// @media only screen and (max-width: 400px) {
+// body {font-size: 98%}
+// }
 
 .navbar-header .navbar-brand {
   text-decoration:none;
@@ -20,10 +20,16 @@ body {font-size: 98%}
 
 .buttonsearch {
   background-color: #18bc9c;
+  border-color: #18bc9c;
 }
 
 .buttonsearch:hover {
   background: #1dccaa;
+  border-color: #1dccaa;
+}
+
+.buttonsearch:focus, {
+  outline:0px !important;
 }
 
 .form-control {
