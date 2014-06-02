@@ -43,6 +43,7 @@
 .form-control {
  // background-color: rgba(44, 62, 80, 0);
   border-color: rgba(24, 188, 156, 0.58) !important;
+  border-width: 1px;
 }
 
 .form-control::-webkit-input-placeholder { color: #18bc9c; }
@@ -66,3 +67,4 @@ html, body {
 .footer, .push {
     height: 0px; /* .push must be the same height as .footer */
 }
+
