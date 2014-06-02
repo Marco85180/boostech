@@ -3,20 +3,21 @@
       <% @companies.each do |company| %>
       <div class="col-md-6">
         <%#= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
-          <div class="col-md-offset-1 col-md-10">
-            <div class="row"> <!-- Row pour le header de la box -->
-              <div class="col-md-offset-1 col-md-10">
-                <div class="boxcompany"> <!-- Row pour la présentation de la compagnie -->
-                <%= link_to company_path(company), :'data-no-turbolink' => true do %>
-                <h3><%= company.name %></h3>
-                <p> <%= company.description %></p>
-                <p> <%= image_tag company.logo(:thumb) %></p>
-                <p> Cette société est à la recherche de <%= company.campaign.amount %>€</p>
-                <% end %>
-                </div> <!-- Row pour la présentation de la compagnie -->
-              </div>
-            </div> <!-- Row pour le header de la box -->
+        <div class="row boxcompany">
+          <%= link_to company_path(company), :'data-no-turbolink' => true do %>
+          <div class="col-md-2 picture">
+            <p> <%= image_tag company.logo(:thumb) %></p>
           </div>
+          <div class="col-md-9 col-md-offset-1">
+            <h4><%= company.name %></h4>
+            <p> <%= company.description %></p>
+            <p> Cette société est à la recherche de <%= company.campaign.amount %>€</p>
+              <%= link_to company_path(company), :'data-no-turbolink' => true do %>
+              <button class="btn btn-primary btn-sm buttonsearch">Voir</button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
       <% end %>
     </div>
