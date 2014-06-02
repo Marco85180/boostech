@@ -43,3 +43,18 @@
   margin-top: 1em;
 }
 
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 82%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -20px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 0px; /* .push must be the same height as .footer */
+}
