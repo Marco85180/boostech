@@ -10,10 +10,9 @@
                 <%= link_to company_path(company), :'data-no-turbolink' => true do %>
                 <h3><%= company.name %></h3>
                 <p> <%= company.description %></p>
-                <p> <%= image_tag company.logo(:medium) %></p>
+                <p> <%= image_tag company.logo(:thumb) %></p>
+                <p> Cette société est à la recherche de <%= company.campaign.amount %>€</p>
                 <% end %>
-
-
                 </div> <!-- Row pour la présentation de la compagnie -->
               </div>
             </div> <!-- Row pour le header de la box -->
