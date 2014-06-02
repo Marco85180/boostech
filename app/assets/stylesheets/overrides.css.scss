@@ -10,6 +10,14 @@
   text-decoration:none;
 }
 
+.picture {
+  margin-top: 30px;
+}
+
+.boxcompany {
+  margin: 1em;
+}
+
 .boxcompany a {
   text-decoration:none;
 }
@@ -53,7 +61,7 @@ html, body {
     min-height: 82%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -20px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
     height: 0px; /* .push must be the same height as .footer */
