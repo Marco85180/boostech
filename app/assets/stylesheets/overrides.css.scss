@@ -20,6 +20,7 @@
 
 .boxcompany a {
   text-decoration:none;
+  color: #2c3e50;
 }
 
 .navbar-form {
@@ -53,18 +54,19 @@
 }
 
 * {
-    margin: 0;
+  margin: 0;
 }
 html, body {
-    height: 100%;
+  height: 100%;
 }
 .wrapper {
-    min-height: 82%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
+  min-height: 100%;
+  height: auto !important;
+  height: 80%;
+  margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-    height: 0px; /* .push must be the same height as .footer */
+  height: 0px; /* .push must be the same height as .footer */
+  clear: both;
 }
 
