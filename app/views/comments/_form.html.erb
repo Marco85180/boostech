@@ -1,0 +1,27 @@
+<%= form_for Comment.new(commentable: commentable) do |f| %>
+  <div class="row comment-form">
+    <%= f.hidden_field :commentable_id %>
+    <%= f.hidden_field :commentable_type %>
+    <%= f.hidden_field :return_to, value: request.original_url %>
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          Laissez un commentaire :
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.text_area :comment %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.submit 'Envoyer' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

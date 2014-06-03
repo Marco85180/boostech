@@ -1,24 +1,33 @@
   <div class="container">
     <div class="row">
       <% @companies.each do |company| %>
-      <div class="col-md-6">
-        <%#= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
-        <div class="row boxcompany">
-          <%= link_to company_path(company), :'data-no-turbolink' => true do %>
-          <div class="col-md-2 picture">
-            <p> <%= image_tag company.logo(:thumb) %></p>
+        <% unless company.campaigns.empty? %>
+          <div class="col-md-6">
+            <%#= image_tag company.pictures.first.file.url(:medium) if company.pictures.size > 0 %>
+            <div class="boxcompany">
+              <div class="row info">
+                <%= link_to company_path(company), :'data-no-turbolink' => true do %>
+                  <div class="col-md-2 picture">
+                    <p> <%= image_tag company.logo(:thumb) %></p>
+                  </div>
+                  <div class="col-md-9 col-md-offset-1">
+                    <h4><%= company.name %></h4>
+                    <p> <%= company.description %></p>
+                    <p> Cette société est à la recherche de <%= company.campaigns.last.amount %>€</p>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="row">
+                <div class="col-md-9 col-md-offset-3 buttons">
+                  <%= link_to 'Détails de la société', company_path(company), :'data-no-turbolink' => true, :class => 'btn btn-primary btn-sm buttonsearch'  %>
+
+                  <%= link_to 'Voir la campagne', company_campaign_path(company, company.campaigns.last), :'data-no-turbolink' => true, :class => 'btn btn-primary btn-sm'  %>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-9 col-md-offset-1">
-            <h4><%= company.name %></h4>
-            <p> <%= company.description %></p>
-            <p> Cette société est à la recherche de <%= company.campaign.amount %>€</p>
-              <%= link_to company_path(company), :'data-no-turbolink' => true do %>
-              <button class="btn btn-primary btn-sm buttonsearch">Voir</button>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+        <% end %>
       <% end %>
     </div>
   </div>

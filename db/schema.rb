@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603091210) do
+ActiveRecord::Schema.define(version: 20140603123734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140603091210) do
     t.string   "region"
     t.string   "street"
     t.string   "country"
-    t.integer  "zipcode"
+    t.string   "zipcode"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at"
@@ -73,6 +73,21 @@ ActiveRecord::Schema.define(version: 20140603091210) do
 
   add_index "campaigns", ["company_id"], name: "index_campaigns_on_company_id", using: :btree
 
+  create_table "comments", force: true do |t|
+    t.string   "title",            limit: 50, default: ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.string   "role",                        default: "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
   create_table "companies", force: true do |t|
     t.string   "name"
     t.integer  "siren"
@@ -93,7 +108,7 @@ ActiveRecord::Schema.define(version: 20140603091210) do
   end
 
   create_table "companies_users", force: true do |t|
-    t.integer "companies_id"
+    t.integer "company_id"
     t.integer "user_id"
   end
 
@@ -146,7 +161,7 @@ ActiveRecord::Schema.define(version: 20140603091210) do
     t.string   "region"
     t.string   "street"
     t.string   "country"
-    t.integer  "zipcode"
+    t.string   "zipcode"
     t.string   "picture"
   end
 
