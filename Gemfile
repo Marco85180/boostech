@@ -31,6 +31,7 @@ gem 'country_select'
 gem "geocoder"
 gem "gmaps4rails"
 gem 'jquery-turbolinks'
+gem 'acts_as_commentable'
 
 group :assets do
   gem 'bootstrap-sass', '~> 3.1.1'

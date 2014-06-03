@@ -1,0 +1,9 @@
+We're looking for <%= @campaign.amount %>. Thank you :)
+
+<% if user_signed_in? %>
+  <%= render 'comments/form', commentable: @campaign %>
+<% end %>
+
+<div class="comments">
+  <%= render partial: 'comments/comment', collection: @comments %>
+</div>

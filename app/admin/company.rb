@@ -12,7 +12,7 @@ ActiveAdmin.register Company do
       company.addresses.map { |a| [ a.street, a.zipcode, a.city ].join (" ") }.join " - "
     end
     column "Campaign" do |company|
-      company.campaign.nil? ? 0 : company.campaign.amount
+      company.campaigns.empty? ? 0 : company.campaigns.last.amount
     end
     actions
   end
