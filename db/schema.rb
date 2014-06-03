@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602100238) do
+ActiveRecord::Schema.define(version: 20140603091210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,11 @@ ActiveRecord::Schema.define(version: 20140602100238) do
     t.datetime "logo_updated_at"
   end
 
+  create_table "companies_users", force: true do |t|
+    t.integer "companies_id"
+    t.integer "user_id"
+  end
+
   create_table "founders", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -108,6 +113,19 @@ ActiveRecord::Schema.define(version: 20140602100238) do
 
   add_index "founders", ["company_id"], name: "index_founders_on_company_id", using: :btree
 
+  create_table "proposals", force: true do |t|
+    t.decimal  "rate",        precision: 6, scale: 2
+    t.decimal  "amount",      precision: 7, scale: 0
+    t.integer  "user_id"
+    t.integer  "campaign_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "proposals", ["campaign_id"], name: "index_proposals_on_campaign_id", using: :btree
+  add_index "proposals", ["user_id"], name: "index_proposals_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -121,6 +139,15 @@ ActiveRecord::Schema.define(version: 20140602100238) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.text     "biography"
+    t.string   "city"
+    t.string   "region"
+    t.string   "street"
+    t.string   "country"
+    t.integer  "zipcode"
+    t.string   "picture"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

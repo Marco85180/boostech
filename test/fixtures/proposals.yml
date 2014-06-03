@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate: 
+  amount: 
+  user_id: 
+  campaign_id: 
+  status: MyString
+
+two:
+  rate: 
+  amount: 
+  user_id: 
+  campaign_id: 
+  status: MyString
