@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
   has_and_belongs_to_many :users
 
   has_attached_file :banner,
-    styles: { medium: "300x300>", thumb: "100x100>" }
+    styles: { large: "1000x300>", medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :banner,
     :content_type => /\Aimage\/.*\Z/
 
