@@ -23,18 +23,27 @@
 </div>
 
 <div class="row">
-      <div class="mapbox" id="map" style='width: 100%; height:200px;'></div>
+  <div class="mapbox" id="map" style='width: 100%; height:300px;'></div>
+</div>
+
+<% if user_signed_in? %>
+  <%= render 'comments/form', commentable: @campaign %>
+<% end %>
+
+
+<div class="comments">
+  <%= render partial: 'comments/comment', collection: @campaign.comments %>
 </div>
 
 <% content_for(:js) do %>
   <script type="text/javascript">
    $(document).on('ready', function() {
       handler = Gmaps.build('Google');
-      handler.buildMap({ provider: { }, internal: {id: 'map'}}, function(){
+      handler.buildMap({ provider: {scrollwheel: false, styles: mapStyle}, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(<%=raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
-        handler.getMap().setZoom(12);
+        handler.getMap().setZoom(13);
       });
     });
   </script>
