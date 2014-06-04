@@ -10,20 +10,20 @@
       <p> <%= @company.addresses.first.street %></p>
       <p> <%= @company.addresses.first.zipcode %></p>
       <p> <%= @company.addresses.first.city %></p>
+      <p> <%= @company.campaigns.first.amount.to_s %></p>
     </div>
     <div class=" col-md-4">
       <p> <%= image_tag @company.logo(:medium) %></p>
     </div>
   </div>
-  <div class="row">
-      <div class="mapbox" id="map" style='width: 100%; height:250px;'></div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 col-md-offset-1 buttons">
+  <div class="row buttonshowcompany">
     <%= link_to 'Back', companies_path, :class => 'btn btn-primary btn-md buttonsearch'  %>
     <%= link_to 'Voir la campagne', company_campaign_path(@company, @company.campaigns.last), :class => 'btn btn-primary btn-md'  %>
-    </div>
   </div>
+</div>
+
+<div class="row">
+      <div class="mapbox" id="map" style='width: 100%; height:200px;'></div>
 </div>
 
 <% content_for(:js) do %>
