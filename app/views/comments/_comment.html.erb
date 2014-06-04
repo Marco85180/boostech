@@ -1,15 +1,20 @@
-<div class="row comment">
-  <div class="col-md-1 avatar text-center">
-    <%= image_tag avatar_for(comment.user), size: '48x48' %>
-  </div>
+<div class="container">
+  <div class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2 panel-default">
 
-  <div class="col-md-11 body">
-    <div class="row info">
-      <div class="col-md-12">
-        Par <%= comment.user.full_name %> il y a <%= time_ago_in_words(comment.created_at) %>
+    <div class="row">
+      <div class="col-md-1 avatar text-center">
+        <%= image_tag avatar_for(comment.user), size: '64x64' %>
       </div>
-      <div class="col-md-12 comment-text">
-        <%= comment.comment %>
+
+      <div class="col-md-11 body">
+        <div class="row comment panel-default">
+          <div class="col-md-12 panel-heading">
+            <h6>Par <%= comment.user.full_name %> il y a <%= time_ago_in_words(comment.created_at) %></h6>
+          </div>
+          <div class="col-md-12 comment-text">
+            <%= comment.comment %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
