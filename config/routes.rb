@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root "companies#index"
 
   resources :comments, only: [:create]
+  resources :proposals, only: [:create]
 
   resources :companies do
     resources :campaigns

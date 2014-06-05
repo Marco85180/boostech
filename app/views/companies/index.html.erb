@@ -13,7 +13,7 @@
                   <div class="col-md-9 col-md-offset-1">
                     <h4><%= company.name %></h4>
                     <p> <%= company.description %></p>
-                    <p> Cette société est à la recherche de <%= company.campaigns.last.amount %>€</p>
+                    <p> Cette société est à la recherche de <%= number_to_currency(company.campaigns.last.amount, locale: :fr, precision: 0) %></p>
                   </div>
                 <% end %>
               </div>
