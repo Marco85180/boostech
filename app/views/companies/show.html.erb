@@ -10,7 +10,7 @@
       <p> <%= @company.addresses.first.street %></p>
       <p> <%= @company.addresses.first.zipcode %></p>
       <p> <%= @company.addresses.first.city %></p>
-      <p> <%= @company.campaigns.first.amount.to_s %></p>
+      <p> <%= number_to_currency(@company.campaigns.first.amount, locale: :fr, precision: 0) %></p>
     </div>
     <div class=" col-md-4">
       <p> <%= image_tag @company.logo(:medium) %></p>
@@ -18,7 +18,7 @@
   </div>
   <div class="row buttonshowcompany">
     <%= link_to 'Back', companies_path, :class => 'btn btn-primary btn-md buttonsearch'  %>
-    <%= link_to 'Voir la campagne', company_campaign_path(@company, @company.campaigns.last), :class => 'btn btn-primary btn-md'  %>
+    <%= link_to 'Je prête', company_campaign_path(@company, @company.campaigns.last), :class => 'btn btn-primary btn-md'  %>
   </div>
 </div>
 
