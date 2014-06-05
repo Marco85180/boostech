@@ -8,16 +8,17 @@
   <div class="row">
     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 panel-default">
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-          60%
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @pourcentage;">
+          <%= @pourcentage %>%
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2 panel-default">
-      <%= form_for Proposal.new do |f| %>
+      <%= form_for @campaign.proposals.build do |f| %>
       <%= f.hidden_field :return_to, value: request.original_url %>
+      <%= f.hidden_field :campaign_id, value: @campaign.id %>
         <div>
           <p>Quel montant souhaitez-vous prêter?</p>
         </div>
