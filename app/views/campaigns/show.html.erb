@@ -8,8 +8,8 @@
   <div class="row">
     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 panel-default">
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @pourcentage;">
-          <%= @pourcentage %>%
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= @campaign.funding_percentage.to_i %>%">
+          <%= @campaign.funding_percentage %>%
         </div>
       </div>
     </div>
