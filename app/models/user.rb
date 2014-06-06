@@ -18,9 +18,14 @@ class User < ActiveRecord::Base
     return existing_user unless existing_user.nil?
 
     existing_user = where(email: auth.info.email).first
+
     if existing_user
       existing_user.provider = auth.provider
       existing_user.uid = auth.uid
+      existing_user.name = auth.info.name   # assuming the user model has a name
+      existing_user.picture = "http://graph.facebook.com/#{auth.uid}/picture?type=square"
+      existing_user.fb_token = auth.credentials.token
+      existing_user.fb_token_expiry = Time.at(auth.credentials.expires_at)
       existing_user.save
     else
       existing_user = create do |user|
@@ -29,11 +34,12 @@ class User < ActiveRecord::Base
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name   # assuming the user model has a name
-        user.picture = auth.info.image # assuming the user model has an image
+        user.picture = "http://graph.facebook.com/#{auth.uid}/picture?type=square"
         user.fb_token = auth.credentials.token
         user.fb_token_expiry = Time.at(auth.credentials.expires_at)
       end
     end
+    existing_user
   end
 
 end
