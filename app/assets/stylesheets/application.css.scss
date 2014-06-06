@@ -112,3 +112,19 @@ html, body {
 font-size: 15px;
 line-height: 2;
 }
+
+ul.nav.navbar-nav.navbar-right {
+  height: 1px;
+}
+
+li.dropdown-open {
+  height:60px;
+}
+
+a.dropdown-toggle {
+  height:60px;
+}
+
+img.facebook_nav_bar.img-circle {
+  margin-top: -15px;
+}
